@@ -35,9 +35,6 @@ class FolderDetector(FaceDetector):
         else:
             raise FileNotFoundError
 
-        if not isinstance(detected_faces, list):
-            raise TypeError
-
         return detected_faces
 
     @property
