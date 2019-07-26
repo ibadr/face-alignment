@@ -190,7 +190,7 @@ class FaceAlignment:
         detected_faces = self.face_detector.detect_from_directory(path, extensions, recursive, show_progress_bar)
 
         predictions = {}
-        for image_path, bounding_boxes in detected_faces.items():
+        for image_path, bounding_boxes in tqdm(detected_faces.items(), disable=not show_progress_bar):
             image = io.imread(image_path)
             preds = self.get_landmarks_from_image(image, bounding_boxes)
             predictions[image_path] = preds
