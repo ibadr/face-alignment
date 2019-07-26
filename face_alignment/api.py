@@ -5,6 +5,7 @@ from torch.utils.model_zoo import load_url
 from enum import Enum
 from skimage import io
 from skimage import color
+from tqdm import tqdm
 import numpy as np
 import cv2
 try:
